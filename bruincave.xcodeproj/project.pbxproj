@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E1D5E301FC787C00061702E /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E1D5E2F1FC787C00061702E /* SWRevealViewController.m */; };
 		8E2817F61F2B14E600F96CA9 /* SophomoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2817F51F2B14E600F96CA9 /* SophomoreViewController.swift */; };
 		8E2817F81F2B150100F96CA9 /* JuniorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2817F71F2B150100F96CA9 /* JuniorViewController.swift */; };
 		8E2817FA1F2B151700F96CA9 /* SeniorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2817F91F2B151700F96CA9 /* SeniorViewController.swift */; };
@@ -23,7 +24,6 @@
 		8E77E85E1EDA32C4008A13D0 /* bruincaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77E85D1EDA32C4008A13D0 /* bruincaveUITests.swift */; };
 		8E94C3DD1F4A315B00293C5F /* FreshmanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E94C3DC1F4A315B00293C5F /* FreshmanTableViewCell.swift */; };
 		8EBEAC4E1F91BBFF0015F35A /* NotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EBEAC4D1F91BBFF0015F35A /* NotificationsTableViewCell.swift */; };
-		8EC62A3E1F22E35500D1B6C6 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8EC62A3D1F22E35500D1B6C6 /* SWRevealViewController.m */; };
 		8EC62A401F22E99C00D1B6C6 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC62A3F1F22E99C00D1B6C6 /* NavigationViewController.swift */; };
 		8EC62A421F22F52100D1B6C6 /* FreshmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC62A411F22F52100D1B6C6 /* FreshmanViewController.swift */; };
 		8EE421D41F2BF54C00F7EAB1 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE421D31F2BF54C00F7EAB1 /* DesignableUITextField.swift */; };
@@ -49,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E1D5E2E1FC787C00061702E /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8E1D5E2F1FC787C00061702E /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8E2817F51F2B14E600F96CA9 /* SophomoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SophomoreViewController.swift; sourceTree = "<group>"; };
 		8E2817F71F2B150100F96CA9 /* JuniorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JuniorViewController.swift; sourceTree = "<group>"; };
 		8E2817F91F2B151700F96CA9 /* SeniorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeniorViewController.swift; sourceTree = "<group>"; };
@@ -72,8 +74,6 @@
 		8E94C3DC1F4A315B00293C5F /* FreshmanTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreshmanTableViewCell.swift; sourceTree = "<group>"; };
 		8EBEAC4D1F91BBFF0015F35A /* NotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsTableViewCell.swift; sourceTree = "<group>"; };
 		8EC62A3B1F22E35400D1B6C6 /* bruincave-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bruincave-Bridging-Header.h"; sourceTree = "<group>"; };
-		8EC62A3C1F22E35500D1B6C6 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../../../Downloads/SWRevealViewController.h; sourceTree = "<group>"; };
-		8EC62A3D1F22E35500D1B6C6 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../../../Downloads/SWRevealViewController.m; sourceTree = "<group>"; };
 		8EC62A3F1F22E99C00D1B6C6 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		8EC62A411F22F52100D1B6C6 /* FreshmanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FreshmanViewController.swift; sourceTree = "<group>"; };
 		8EE421D31F2BF54C00F7EAB1 /* DesignableUITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
@@ -133,11 +133,11 @@
 				8E77E83F1EDA32C4008A13D0 /* ViewController.swift */,
 				8E77E8411EDA32C4008A13D0 /* Main.storyboard */,
 				8E77E8441EDA32C4008A13D0 /* Assets.xcassets */,
-				8EC62A3C1F22E35500D1B6C6 /* SWRevealViewController.h */,
-				8EC62A3D1F22E35500D1B6C6 /* SWRevealViewController.m */,
 				8E77E8461EDA32C4008A13D0 /* LaunchScreen.storyboard */,
 				8E77E8491EDA32C4008A13D0 /* Info.plist */,
 				8EC62A3B1F22E35400D1B6C6 /* bruincave-Bridging-Header.h */,
+				8E1D5E2E1FC787C00061702E /* SWRevealViewController.h */,
+				8E1D5E2F1FC787C00061702E /* SWRevealViewController.m */,
 				8EC62A3F1F22E99C00D1B6C6 /* NavigationViewController.swift */,
 				8EC62A411F22F52100D1B6C6 /* FreshmanViewController.swift */,
 				8E2817F51F2B14E600F96CA9 /* SophomoreViewController.swift */,
@@ -320,11 +320,11 @@
 				8E2817FA1F2B151700F96CA9 /* SeniorViewController.swift in Sources */,
 				8E2818021F2B290500F96CA9 /* MessagesViewController.swift in Sources */,
 				8E2817FE1F2B202F00F96CA9 /* AnonymousViewController.swift in Sources */,
+				8E1D5E301FC787C00061702E /* SWRevealViewController.m in Sources */,
 				8EC62A421F22F52100D1B6C6 /* FreshmanViewController.swift in Sources */,
 				8E2818001F2B28EF00F96CA9 /* NotificationsViewController.swift in Sources */,
 				8E77E83E1EDA32C4008A13D0 /* AppDelegate.swift in Sources */,
 				8EBEAC4E1F91BBFF0015F35A /* NotificationsTableViewCell.swift in Sources */,
-				8EC62A3E1F22E35500D1B6C6 /* SWRevealViewController.m in Sources */,
 				8EE421D41F2BF54C00F7EAB1 /* DesignableUITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
