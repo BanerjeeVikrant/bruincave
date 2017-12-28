@@ -20,46 +20,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.usernameTF.delegate = self
-        self.passwordTF.delegate = self
+        
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         
-        
         view.addGestureRecognizer(tap)
         
-        let borderUsername = CALayer()
-        let borderPassword = CALayer()
-        let width = CGFloat(2.0)
-        borderUsername.borderColor = UIColor.white.cgColor
-        borderUsername.frame = CGRect(x: 0, y: usernameTF.frame.size.height - width, width: usernameTF.frame.size.width, height: usernameTF.frame.size.height)
         
-        borderUsername.borderWidth = width
-        usernameTF.layer.addSublayer(borderUsername)
-        usernameTF.layer.masksToBounds = true
-        
-        borderPassword.borderColor = UIColor.white.cgColor
-        borderPassword.frame = CGRect(x: 0, y: passwordTF.frame.size.height - width, width:  passwordTF.frame.size.width, height: passwordTF.frame.size.height)
-        
-        borderPassword.borderWidth = width
-        passwordTF.layer.addSublayer(borderPassword)
-        passwordTF.layer.masksToBounds = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        var usernameSet: String = ""
+    
         let defaults = UserDefaults.standard
-        
-        if(defaults.string(forKey: "username") != nil || defaults.string(forKey: "username") != ""){
-            usernameSet = defaults.string(forKey: "username")!
-        }
-        
-        if(usernameSet != ""){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeView") as! SWRevealViewController
-            self.present(newViewController, animated: true, completion: nil)
+        if defaults.string(forKey: "username") != nil {
+            print("username exists:",defaults.object(forKey: "username") as Any)
+            changeStoryBoard()
+            
+        } else {
+            print(defaults.object(forKey: "username") as Any)
         }
     }
     
@@ -97,16 +77,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                                         let defaults = UserDefaults.standard
                                         defaults.set(self.username, forKey: "username")
                                         
-                                        var usernameSet: String = ""
-                                        
-                                        if(defaults.string(forKey: "username") != ""){
-                                            usernameSet = defaults.string(forKey: "username")!
-                                        }
-                                        
-                                        if(usernameSet != ""){
-                                            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                            let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeView") as! SWRevealViewController
-                                            self.present(newViewController, animated: true, completion: nil)
+                                        if defaults.string(forKey: "username") != nil {
+                                            print("username exists:",defaults.object(forKey: "username") as Any)
+                                            self.changeStoryBoard()
+                                            
+                                        } else {
+                                            print(defaults.object(forKey: "username") as Any)
                                         }
                                     }
                                 }
@@ -121,13 +97,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         task.resume()
     }
     
+    func changeStoryBoard() {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeView") as! SWRevealViewController
+        
+        self.present(newViewController, animated: true, completion: nil)
+    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
     
     //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }

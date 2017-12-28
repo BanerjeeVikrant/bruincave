@@ -13,6 +13,13 @@ class AnonymousTableViewCell: UITableViewCell {
     @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var commentsCountLabel: UILabel!
+    var onViewCommentsTapped : (() -> Void)? = nil
+    @IBAction func viewComments(_ sender: UIButton) {
+        if let onViewCommentsTapped = self.onViewCommentsTapped {
+            onViewCommentsTapped()
+        }
+    }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

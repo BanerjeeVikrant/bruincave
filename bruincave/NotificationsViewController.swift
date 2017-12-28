@@ -13,6 +13,11 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet var notificationsTableView: UITableView!
     
+    @IBAction func searchUsers(_ sender: Any) {
+        let searchUserVC = self.storyboard?.instantiateViewController(withIdentifier: "searchView") as! SWRevealViewController
+        self.present(searchUserVC, animated: true, completion: nil)
+    }
+    
     var bodyArray = [String]()
     var timeArray = [String]()
     var fromPicArray = [String]()
@@ -117,5 +122,4 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
             view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
     }
-
 }

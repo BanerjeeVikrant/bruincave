@@ -1,23 +1,27 @@
 //
-//  MessagesViewController.swift
+//  SearchViewController.swift
 //  bruincave
 //
-//  Created by user128030 on 7/28/17.
+//  Created by user128030 on 12/26/17.
 //  Copyright © 2017 user128030. All rights reserved.
 //
 
 import UIKit
 
-class MessagesViewController: UIViewController, UITextFieldDelegate, UITableViewDataSource {
+class SearchViewController: UIViewController, UITableViewDataSource{
 
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var messageUsersTableView: UITableView!
+    @IBOutlet weak var searchUsersTableView: UITableView!
     @IBOutlet weak var searchTF: DesignableUITextField!
+    
+    @IBAction func backButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     var nameArray = [String]()
     var idArray = [Int]()
-    var bodyArray = [String]()
+    var classArray = [String]()
     var fromPicArray = [String]()
+    var statusPicArray = [String]()
     var str = ""
     
     @IBAction func searchEdit(_ sender: Any) {
@@ -32,14 +36,13 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MessagesViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
         
         let defaults = UserDefaults.standard
         let usernameSet: String = defaults.string(forKey: "username")!
         
-        sideMenus()
         getUsers(username: usernameSet, stri: "")
         
     }
@@ -47,16 +50,16 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
         
         nameArray = [String]()
         idArray = [Int]()
-        bodyArray = [String]()
+        classArray = [String]()
         fromPicArray = [String]()
         
-        let myUrl = URL(string: "http://www.bruincave.com/m/andriod/users.php");
+        let myUrl = URL(string: "http://www.bruincave.com/m/andriod/searchusers.php");
         
         var request = URLRequest(url:myUrl!)
         
         request.httpMethod = "POST"// Compose a query string
         
-        let postString = "s="+stri+"&o=0&user="+username;
+        let postString = "s="+stri+"&user="+username;
         
         request.httpBody = postString.data(using: String.Encoding.utf8);
         
@@ -80,8 +83,8 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
                                 if let id = postDict.value(forKey: "id") {
                                     self.idArray.append(id as! Int)
                                 }
-                                if let body = postDict.value(forKey: "body") {
-                                    self.bodyArray.append(body as! String)
+                                if let _class = postDict.value(forKey: "class") {
+                                    self.classArray.append(_class as! String)
                                 }
                                 if let fromPic = postDict.value(forKey: "fromPic"){
                                     self.fromPicArray.append(fromPic as! String)
@@ -92,7 +95,7 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
                     
                     
                     OperationQueue.main.addOperation({
-                        self.messageUsersTableView.reloadData()
+                        self.searchUsersTableView.reloadData()
                     })
                     
                     
@@ -104,23 +107,23 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
         task.resume()
     }
     
-    func tableView(_ messageUsersTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ searchUsersTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nameArray.count
     }
     
     
-    func tableView(_ messageUsersTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = messageUsersTableView.dequeueReusableCell(withIdentifier: "messageuserscell") as! MessageUsersTableViewCell
+    func tableView(_ searchUsersTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = searchUsersTableView.dequeueReusableCell(withIdentifier: "searchcell") as! SearchTableViewCell
         
         cell.nameLabel.text = nameArray[indexPath.row]
-        cell.bodyLabel.text = bodyArray[indexPath.row]
+        cell.classLabel.text = classArray[indexPath.row]
         
         let fromPicURL = NSURL(string: fromPicArray[indexPath.row])
         
         if fromPicURL != nil {
             let data = NSData(contentsOf: (fromPicURL as URL?)!)
             
-            cell.userPicImage.image = UIImage(data:  data! as Data)
+            cell.profileImage.image = UIImage(data:  data! as Data)
         }
         
         return cell
@@ -131,15 +134,7 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
         // Dispose of any resources that can be recreated.
     }
     
-    func sideMenus(){
-        if revealViewController() != nil {
-            menuButton.target = revealViewController()
-            menuButton.action = #selector(SWRevealViewController.revealToggle(_:))
-            revealViewController().rearViewRevealWidth = 275
-            
-            view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-    }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
@@ -150,5 +145,6 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
-
+    
 }
+

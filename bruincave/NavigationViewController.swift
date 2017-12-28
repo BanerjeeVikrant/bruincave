@@ -78,37 +78,36 @@ class NavigationViewController: UIViewController {
         logoutView.isUserInteractionEnabled = true
 
     }
-    func homeViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func homeViewTapped(_ sender: UITapGestureRecognizer) {
         let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeView") as! SWRevealViewController
         self.present(homeVC, animated: true, completion: nil)
     }
-    func anonymousViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func anonymousViewTapped(_ sender: UITapGestureRecognizer) {
         let trackingVC = self.storyboard?.instantiateViewController(withIdentifier: "anonymousView") as! SWRevealViewController
         self.present(trackingVC, animated: true, completion: nil)
     }
-    func notificationsViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func notificationsViewTapped(_ sender: UITapGestureRecognizer) {
         let trackingVC = self.storyboard?.instantiateViewController(withIdentifier: "notificationsView") as! SWRevealViewController
         self.present(trackingVC, animated: true, completion: nil)
     }
-    func messagesViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func messagesViewTapped(_ sender: UITapGestureRecognizer) {
         let trackingVC = self.storyboard?.instantiateViewController(withIdentifier: "messagesView") as! SWRevealViewController
         self.present(trackingVC, animated: true, completion: nil)
     }
-    func settingsViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func settingsViewTapped(_ sender: UITapGestureRecognizer) {
         
     }
-    func feedbackViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func feedbackViewTapped(_ sender: UITapGestureRecognizer) {
         
     }
-    func logoutViewTapped(_ sender: UITapGestureRecognizer) {
+    @objc func logoutViewTapped(_ sender: UITapGestureRecognizer) {
         let defaults = UserDefaults.standard
-        defaults.set("", forKey: "username")
+        defaults.set(nil, forKey: "username")
         
-        if(defaults.string(forKey: "username") == ""){
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginView") as! ViewController
-            self.present(newViewController, animated: true, completion: nil)
-        }
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "loginView") as! ViewController
+        self.present(newViewController, animated: true, completion: nil)
+        
     }
     
     

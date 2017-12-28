@@ -19,11 +19,18 @@ class FreshmanViewController: UIViewController, UITableViewDataSource {
     var captionArray = [String]()
     var postPictureArray = [String]()
     
+    @IBAction func searchUsers(_ sender: Any) {
+        let searchUserVC = self.storyboard?.instantiateViewController(withIdentifier: "searchView") as! SWRevealViewController
+        self.present(searchUserVC, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
-        let usernameSet: String = defaults.string(forKey: "username")!
+        var usernameSet: String = ""
+        if(defaults.string(forKey: "username") != nil){
+            usernameSet = defaults.string(forKey: "username")!
+        }
         
         sideMenus()
         
@@ -110,7 +117,7 @@ class FreshmanViewController: UIViewController, UITableViewDataSource {
         let postimgURL = NSURL(string: postPictureArray[indexPath.row])
         
         if postimgURL != nil {
-            let data = NSData(contentsOf: (postimgURL as URL?)!)
+            //let data = NSData(contentsOf: (postimgURL as URL?)!)
         
            // cell.postedImageView.image = UIImage(data:  data! as Data)
         }

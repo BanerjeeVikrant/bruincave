@@ -13,6 +13,11 @@ class AnonymousViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var anonymousTableView: UITableView!
     
+    @IBAction func postAnonymousComment(_ sender: Any) {
+        let anonymousPostVC = self.storyboard?.instantiateViewController(withIdentifier: "anonymousPostController") as! SWRevealViewController
+        self.present(anonymousPostVC, animated: true, completion: nil)
+    }
+    
     var idArray = [Int]()
     var bodyArray = [String]()
     var timeArray = [String]()
@@ -90,6 +95,17 @@ class AnonymousViewController: UIViewController, UITableViewDataSource {
         cell.bodyLabel.text = bodyArray[indexPath.row]
         cell.timeLabel.text = timeArray[indexPath.row]
         cell.commentsCountLabel.text = commentsCountArray[indexPath.row]
+        cell.onViewCommentsTapped = {
+            let defaults = UserDefaults.standard
+            defaults.set(self.idArray[indexPath.row], forKey: "anonymouscommentsid")
+     
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "anonymousC")
+            
+            self.present(newViewController, animated: true, completion: nil)
+
+        }
         
         cell.separatorInset = UIEdgeInsetsMake(40, 50, 40, 50)
         cell.layer.borderWidth = 5
