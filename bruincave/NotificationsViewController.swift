@@ -30,7 +30,7 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
         
         sideMenus()
         
-        let myUrl = URL(string: "http://www.bruincave.com/m/andriod/bringnotifications.php");
+        let myUrl = URL(string: "http://www.bruincave.com/m/android/bringnotifications.php");
         
         var request = URLRequest(url:myUrl!)
         
@@ -105,7 +105,88 @@ class NotificationsViewController: UIViewController, UITableViewDataSource {
             cell.fromPicImage.image = UIImage(data:  data! as Data)
         }
         
+        // Check if the last row number is the same as the last current data element
+        if indexPath.row == self.bodyArray.count - 1 {
+            self.loadMore()
+        }
+        
         return cell
+    }
+    
+    // number of items to be fetched each time (i.e., database LIMIT)
+    let itemsPerBatch = 50
+    
+    // Where to start fetching items (database OFFSET)
+    var offset = 0
+    
+    // a flag for when all database items have already been loaded
+    var reachedEndOfItems = false
+    
+    func loadMore() {
+    /*
+        // don't bother doing another db query if already have everything
+        guard !self.reachedEndOfItems else {
+            return
+        }
+    */
+        
+        let defaults = UserDefaults.standard
+        let usernameSet: String = defaults.string(forKey: "username")!
+        
+        let myUrl = URL(string: "http://www.bruincave.com/m/android/bringnotifications.php");
+        
+        var request = URLRequest(url:myUrl!)
+        
+        request.httpMethod = "POST" // Compose a query string
+        offset = offset + 5
+        let postString = "o="+String(offset)+"&user="+usernameSet
+        print(postString)
+        
+        request.httpBody = postString.data(using: String.Encoding.utf8);
+        
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            
+            
+            //Let's convert response sent from a server side script toa NSDictionary object:
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                
+                if json != nil {
+                    if let postArray = json?["notifications"] as? NSArray {
+                        for post in postArray{
+                            if let postDict = post as? NSDictionary {
+                                if let frompic = postDict.value(forKey: "fromPic") {
+                                    self.fromPicArray.append(frompic as! String)
+                                    print(frompic as! String)
+                                }
+                                if let body = postDict.value(forKey: "body") {
+                                    
+                                    self.bodyArray.append(body as! String)
+                                }
+                                if let postid = postDict.value(forKey: "postid") {
+                                    self.postIdArray.append(postid as! Int)
+                                }
+                                if let time_added = postDict.value(forKey: "time_added") {
+                                    self.timeArray.append(time_added as! String)
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    OperationQueue.main.addOperation({
+                        self.notificationsTableView.reloadData()
+                    })
+                    
+                    
+                }
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+        
     }
     
     override func didReceiveMemoryWarning() {

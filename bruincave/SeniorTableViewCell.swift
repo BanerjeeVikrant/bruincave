@@ -1,14 +1,14 @@
 //
-//  FreshmanTableViewCell.swift
+//  SeniorTableViewCell.swift
 //  bruincave
 //
-//  Created by user128030 on 8/20/17.
-//  Copyright © 2017 user128030. All rights reserved.
+//  Created by user128030 on 1/2/18.
+//  Copyright © 2018 user128030. All rights reserved.
 //
 
 import UIKit
 
-class FreshmanTableViewCell: UITableViewCell {
+class SeniorTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -51,15 +51,15 @@ class FreshmanTableViewCell: UITableViewCell {
         
         postedImageView.image = image
     }
-
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
 

@@ -18,6 +18,12 @@ class MessageUsersTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    override func layoutSubviews() {
+        userPicImage.layer.cornerRadius = userPicImage.frame.size.height/2
+        userPicImage.layer.masksToBounds = true
+        userPicImage.layer.borderWidth = 0
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

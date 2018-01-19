@@ -19,6 +19,12 @@ class NotificationsTableViewCell: UITableViewCell {
         
     }
     
+    override func layoutSubviews() {
+        fromPicImage.layer.cornerRadius = fromPicImage.frame.size.height/2
+        fromPicImage.layer.masksToBounds = true
+        fromPicImage.layer.borderWidth = 0
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

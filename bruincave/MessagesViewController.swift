@@ -50,7 +50,7 @@ class MessagesViewController: UIViewController, UITextFieldDelegate, UITableView
         bodyArray = [String]()
         fromPicArray = [String]()
         
-        let myUrl = URL(string: "http://www.bruincave.com/m/andriod/users.php");
+        let myUrl = URL(string: "http://www.bruincave.com/m/android/users.php");
         
         var request = URLRequest(url:myUrl!)
         

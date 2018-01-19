@@ -35,7 +35,6 @@ class AnonymousCommentsViewController: UIViewController, UITableViewDataSource {
         request.httpMethod = "POST"// Compose a query string
         
         let postString = "postid="+commentsidSet;
-        defaults.set(nil, forKey: "anonymouscommentsid")
         
         request.httpBody = postString.data(using: String.Encoding.utf8);
         

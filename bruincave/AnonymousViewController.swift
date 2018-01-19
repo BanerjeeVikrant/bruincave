@@ -30,7 +30,7 @@ class AnonymousViewController: UIViewController, UITableViewDataSource {
         
         sideMenus()
         
-        let myUrl = URL(string: "http://www.bruincave.com/m/andriod/bringcrush.php");
+        let myUrl = URL(string: "http://www.bruincave.com/m/android/bringcrush.php");
         
         var request = URLRequest(url:myUrl!)
         
@@ -111,8 +111,81 @@ class AnonymousViewController: UIViewController, UITableViewDataSource {
         cell.layer.borderWidth = 5
         let color = UIColor(red:0.20, green:0.25, blue:0.35, alpha:1.0)
         cell.layer.borderColor = color.cgColor
-     
+        
+        if indexPath.row == self.idArray.count - 1 {
+            self.loadMore()
+        }
+        
         return cell
+    }
+    
+    // number of items to be fetched each time (i.e., database LIMIT)
+    let itemsPerBatch = 50
+    
+    // Where to start fetching items (database OFFSET)
+    var offset = 0
+    
+    // a flag for when all database items have already been loaded
+    var reachedEndOfItems = false
+    
+    func loadMore() {
+    /*
+        // don't bother doing another db query if already have everything
+        guard !self.reachedEndOfItems else {
+            return
+        }
+    */
+        let myUrl = URL(string: "http://www.bruincave.com/m/android/bringcrush.php");
+        
+        var request = URLRequest(url:myUrl!)
+        
+        request.httpMethod = "POST"// Compose a query string
+        offset = offset + 5
+        let postString = "o="+String(offset)
+        
+        request.httpBody = postString.data(using: String.Encoding.utf8);
+        
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            
+            
+            //Let's convert response sent from a server side script toa NSDictionary object:
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                
+                if json != nil {
+                    
+                    if let postArray = json?["crush"] as? NSArray {
+                        for post in postArray{
+                            if let postDict = post as? NSDictionary {
+                                if let body = postDict.value(forKey: "body") {
+                                    self.bodyArray.append(body as! String)
+                                }
+                                if let time = postDict.value(forKey: "time_added") {
+                                    self.timeArray.append(time as! String)
+                                }
+                                if let id = postDict.value(forKey: "id") {
+                                    self.idArray.append(id as! Int)
+                                }
+                                if let commentsCount = postDict.value(forKey: "commentscount") {
+                                    self.commentsCountArray.append(commentsCount as! String)
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    OperationQueue.main.addOperation({
+                        self.anonymousTableView.reloadData()
+                    })
+                    
+                    
+                }
+            } catch {
+                print(error)
+            }
+        }
+        task.resume()
+
     }
     
     override func didReceiveMemoryWarning() {

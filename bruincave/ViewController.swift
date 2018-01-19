@@ -17,6 +17,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var password = ""
     var loginError = true
 
+    @IBAction func signUpClicked(_ sender: Any) {
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "signup1") as! SWRevealViewController
+        DispatchQueue.main.async(execute: {
+            self.present(newViewController, animated: true, completion: nil)
+        })
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -98,11 +106,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func changeStoryBoard() {
+        
         let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         let newViewController = storyBoard.instantiateViewController(withIdentifier: "homeView") as! SWRevealViewController
-        
-        self.present(newViewController, animated: true, completion: nil)
+        DispatchQueue.main.async(execute: {
+            self.present(newViewController, animated: true, completion: nil)
+        })
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

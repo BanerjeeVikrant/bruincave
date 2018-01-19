@@ -17,6 +17,10 @@
 		8E2817FE1F2B202F00F96CA9 /* AnonymousViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2817FD1F2B202F00F96CA9 /* AnonymousViewController.swift */; };
 		8E2818001F2B28EF00F96CA9 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2817FF1F2B28EF00F96CA9 /* NotificationsViewController.swift */; };
 		8E2818021F2B290500F96CA9 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2818011F2B290500F96CA9 /* MessagesViewController.swift */; };
+		8E2C9C061FFC346000BC0DDD /* SophomoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C9C051FFC346000BC0DDD /* SophomoreTableViewCell.swift */; };
+		8E2C9C081FFC350B00BC0DDD /* JuniorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C9C071FFC350B00BC0DDD /* JuniorTableViewCell.swift */; };
+		8E2C9C0A1FFC351B00BC0DDD /* SeniorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C9C091FFC351B00BC0DDD /* SeniorTableViewCell.swift */; };
+		8E2C9C0C1FFC353500BC0DDD /* FavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2C9C0B1FFC353500BC0DDD /* FavoritesTableViewCell.swift */; };
 		8E77E83E1EDA32C4008A13D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77E83D1EDA32C4008A13D0 /* AppDelegate.swift */; };
 		8E77E8401EDA32C4008A13D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77E83F1EDA32C4008A13D0 /* ViewController.swift */; };
 		8E77E8431EDA32C4008A13D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E77E8411EDA32C4008A13D0 /* Main.storyboard */; };
@@ -24,6 +28,9 @@
 		8E77E8481EDA32C4008A13D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E77E8461EDA32C4008A13D0 /* LaunchScreen.storyboard */; };
 		8E77E8531EDA32C4008A13D0 /* bruincaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77E8521EDA32C4008A13D0 /* bruincaveTests.swift */; };
 		8E77E85E1EDA32C4008A13D0 /* bruincaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77E85D1EDA32C4008A13D0 /* bruincaveUITests.swift */; };
+		8E77FE7E1FF6191B00BE5640 /* FirstSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77FE7D1FF6191B00BE5640 /* FirstSignUpViewController.swift */; };
+		8E77FE801FF61C1300BE5640 /* SecondSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77FE7F1FF61C1300BE5640 /* SecondSignUpViewController.swift */; };
+		8E77FE821FF61D9C00BE5640 /* ThirdSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E77FE811FF61D9C00BE5640 /* ThirdSignUpViewController.swift */; };
 		8E9288B21FF333FF0003FCC4 /* AnonymousPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9288B11FF333FF0003FCC4 /* AnonymousPostViewController.swift */; };
 		8E9288B41FF335180003FCC4 /* AnonymousPostCommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9288B31FF335180003FCC4 /* AnonymousPostCommentsViewController.swift */; };
 		8E9288B61FF34EF00003FCC4 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9288B51FF34EF00003FCC4 /* SearchViewController.swift */; };
@@ -67,6 +74,11 @@
 		8E2817FD1F2B202F00F96CA9 /* AnonymousViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnonymousViewController.swift; sourceTree = "<group>"; };
 		8E2817FF1F2B28EF00F96CA9 /* NotificationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		8E2818011F2B290500F96CA9 /* MessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8E2C9C051FFC346000BC0DDD /* SophomoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SophomoreTableViewCell.swift; sourceTree = "<group>"; };
+		8E2C9C071FFC350B00BC0DDD /* JuniorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JuniorTableViewCell.swift; sourceTree = "<group>"; };
+		8E2C9C091FFC351B00BC0DDD /* SeniorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeniorTableViewCell.swift; sourceTree = "<group>"; };
+		8E2C9C0B1FFC353500BC0DDD /* FavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewCell.swift; sourceTree = "<group>"; };
+		8E2EB5FF200409E200AB863E /* bruincave.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bruincave.entitlements; sourceTree = "<group>"; };
 		8E77E83A1EDA32C4008A13D0 /* bruincave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bruincave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E77E83D1EDA32C4008A13D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E77E83F1EDA32C4008A13D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +92,9 @@
 		8E77E8591EDA32C4008A13D0 /* bruincaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bruincaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E77E85D1EDA32C4008A13D0 /* bruincaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bruincaveUITests.swift; sourceTree = "<group>"; };
 		8E77E85F1EDA32C4008A13D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E77FE7D1FF6191B00BE5640 /* FirstSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSignUpViewController.swift; sourceTree = "<group>"; };
+		8E77FE7F1FF61C1300BE5640 /* SecondSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondSignUpViewController.swift; sourceTree = "<group>"; };
+		8E77FE811FF61D9C00BE5640 /* ThirdSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdSignUpViewController.swift; sourceTree = "<group>"; };
 		8E9288B11FF333FF0003FCC4 /* AnonymousPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousPostViewController.swift; sourceTree = "<group>"; };
 		8E9288B31FF335180003FCC4 /* AnonymousPostCommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousPostCommentsViewController.swift; sourceTree = "<group>"; };
 		8E9288B51FF34EF00003FCC4 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
@@ -143,6 +158,7 @@
 		8E77E83C1EDA32C4008A13D0 /* bruincave */ = {
 			isa = PBXGroup;
 			children = (
+				8E2EB5FF200409E200AB863E /* bruincave.entitlements */,
 				8E77E83D1EDA32C4008A13D0 /* AppDelegate.swift */,
 				8E77E83F1EDA32C4008A13D0 /* ViewController.swift */,
 				8E77E8411EDA32C4008A13D0 /* Main.storyboard */,
@@ -163,6 +179,10 @@
 				8E2818011F2B290500F96CA9 /* MessagesViewController.swift */,
 				8EE421D31F2BF54C00F7EAB1 /* DesignableUITextField.swift */,
 				8E94C3DC1F4A315B00293C5F /* FreshmanTableViewCell.swift */,
+				8E2C9C051FFC346000BC0DDD /* SophomoreTableViewCell.swift */,
+				8E2C9C071FFC350B00BC0DDD /* JuniorTableViewCell.swift */,
+				8E2C9C091FFC351B00BC0DDD /* SeniorTableViewCell.swift */,
+				8E2C9C0B1FFC353500BC0DDD /* FavoritesTableViewCell.swift */,
 				8EBEAC4D1F91BBFF0015F35A /* NotificationsTableViewCell.swift */,
 				8EEE99E51F92D0CC003A18F0 /* AnonymousTableViewCell.swift */,
 				8EEE99E71F92E880003A18F0 /* MessageUsersTableViewCell.swift */,
@@ -173,6 +193,9 @@
 				8E9288B31FF335180003FCC4 /* AnonymousPostCommentsViewController.swift */,
 				8E9288B51FF34EF00003FCC4 /* SearchViewController.swift */,
 				8EDFA14D1FF43AF4004454C6 /* SearchTableViewCell.swift */,
+				8E77FE7D1FF6191B00BE5640 /* FirstSignUpViewController.swift */,
+				8E77FE7F1FF61C1300BE5640 /* SecondSignUpViewController.swift */,
+				8E77FE811FF61D9C00BE5640 /* ThirdSignUpViewController.swift */,
 			);
 			path = bruincave;
 			sourceTree = "<group>";
@@ -263,17 +286,25 @@
 				TargetAttributes = {
 					8E77E8391EDA32C4008A13D0 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5SZFA84F6W;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+						};
 					};
 					8E77E84D1EDA32C4008A13D0 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5SZFA84F6W;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8E77E8391EDA32C4008A13D0;
 					};
 					8E77E8581EDA32C4008A13D0 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 5SZFA84F6W;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = 8E77E8391EDA32C4008A13D0;
@@ -334,12 +365,15 @@
 			files = (
 				8ED996AC1FF1E93A00B9BF4E /* PrivateMessageViewController.swift in Sources */,
 				8E1D5E321FC7E6D30061702E /* AnonymousCommentsViewController.swift in Sources */,
+				8E2C9C081FFC350B00BC0DDD /* JuniorTableViewCell.swift in Sources */,
 				8E9288B41FF335180003FCC4 /* AnonymousPostCommentsViewController.swift in Sources */,
 				8EC62A401F22E99C00D1B6C6 /* NavigationViewController.swift in Sources */,
+				8E77FE821FF61D9C00BE5640 /* ThirdSignUpViewController.swift in Sources */,
 				8E2817FC1F2B153100F96CA9 /* FavoritesViewController.swift in Sources */,
 				8E2817F61F2B14E600F96CA9 /* SophomoreViewController.swift in Sources */,
 				8E9288B21FF333FF0003FCC4 /* AnonymousPostViewController.swift in Sources */,
 				8EEE99E61F92D0CC003A18F0 /* AnonymousTableViewCell.swift in Sources */,
+				8E77FE801FF61C1300BE5640 /* SecondSignUpViewController.swift in Sources */,
 				8E94C3DD1F4A315B00293C5F /* FreshmanTableViewCell.swift in Sources */,
 				8E77E8401EDA32C4008A13D0 /* ViewController.swift in Sources */,
 				8E2817F81F2B150100F96CA9 /* JuniorViewController.swift in Sources */,
@@ -348,13 +382,17 @@
 				8E9288B61FF34EF00003FCC4 /* SearchViewController.swift in Sources */,
 				8E2818021F2B290500F96CA9 /* MessagesViewController.swift in Sources */,
 				8E2817FE1F2B202F00F96CA9 /* AnonymousViewController.swift in Sources */,
+				8E2C9C0C1FFC353500BC0DDD /* FavoritesTableViewCell.swift in Sources */,
+				8E2C9C061FFC346000BC0DDD /* SophomoreTableViewCell.swift in Sources */,
 				8E1D5E301FC787C00061702E /* SWRevealViewController.m in Sources */,
+				8E2C9C0A1FFC351B00BC0DDD /* SeniorTableViewCell.swift in Sources */,
 				8EC62A421F22F52100D1B6C6 /* FreshmanViewController.swift in Sources */,
 				8E1D5E341FC7E7110061702E /* AnonymousCommentsTableViewCell.swift in Sources */,
 				8E2818001F2B28EF00F96CA9 /* NotificationsViewController.swift in Sources */,
 				8E77E83E1EDA32C4008A13D0 /* AppDelegate.swift in Sources */,
 				8EDFA14E1FF43AF4004454C6 /* SearchTableViewCell.swift in Sources */,
 				8EBEAC4E1F91BBFF0015F35A /* NotificationsTableViewCell.swift in Sources */,
+				8E77FE7E1FF6191B00BE5640 /* FirstSignUpViewController.swift in Sources */,
 				8EE421D41F2BF54C00F7EAB1 /* DesignableUITextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,9 +476,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 5SZFA84F6W;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -494,9 +534,11 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Saikat Bandyopadhyay (5SZFA84F6W)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Saikat Bandyopadhyay (5SZFA84F6W)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 5SZFA84F6W;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -520,10 +562,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Saikat Bandyopadhyay (52L894JG67)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SZFA84F6W;
 				INFOPLIST_FILE = bruincave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bruincave.bruincave;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bruincave.schoolwide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "bruincave/bruincave-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
@@ -537,10 +585,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Saikat Bandyopadhyay (5SZFA84F6W)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SZFA84F6W;
 				INFOPLIST_FILE = bruincave/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bruincave.bruincave;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bruincave.schoolwide;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "bruincave/bruincave-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -553,10 +607,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SZFA84F6W;
 				INFOPLIST_FILE = bruincaveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bruincave.bruincaveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bruincave.app/bruincave";
@@ -568,10 +626,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5SZFA84F6W;
 				INFOPLIST_FILE = bruincaveTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bruincave.bruincaveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bruincave.app/bruincave";

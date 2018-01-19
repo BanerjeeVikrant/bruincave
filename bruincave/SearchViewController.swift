@@ -17,11 +17,12 @@ class SearchViewController: UIViewController, UITableViewDataSource{
         dismiss(animated: true, completion: nil)
     }
     
+    
     var nameArray = [String]()
     var idArray = [Int]()
     var classArray = [String]()
     var fromPicArray = [String]()
-    var statusPicArray = [String]()
+    var statusPicArray = [Int]()
     var str = ""
     
     @IBAction func searchEdit(_ sender: Any) {
@@ -53,7 +54,7 @@ class SearchViewController: UIViewController, UITableViewDataSource{
         classArray = [String]()
         fromPicArray = [String]()
         
-        let myUrl = URL(string: "http://www.bruincave.com/m/andriod/searchusers.php");
+        let myUrl = URL(string: "http://www.bruincave.com/m/android/searchusers.php");
         
         var request = URLRequest(url:myUrl!)
         
@@ -88,6 +89,9 @@ class SearchViewController: UIViewController, UITableViewDataSource{
                                 }
                                 if let fromPic = postDict.value(forKey: "fromPic"){
                                     self.fromPicArray.append(fromPic as! String)
+                                }
+                                if let status = postDict.value(forKey: "following"){
+                                    self.statusPicArray.append(status as! Int)
                                 }
                             }
                         }
@@ -124,6 +128,17 @@ class SearchViewController: UIViewController, UITableViewDataSource{
             let data = NSData(contentsOf: (fromPicURL as URL?)!)
             
             cell.profileImage.image = UIImage(data:  data! as Data)
+        }
+        
+        if(statusPicArray[indexPath.row] == 1){
+            if let image = UIImage(named: "favoritefilled.png") {
+                cell.statusImage.setImage(image, for: .normal)
+            }
+        }else{
+            if let image = UIImage(named: "favoriteoutlined.png") {
+                cell.statusImage.setImage(image, for: .normal)
+            }
+            
         }
         
         return cell
